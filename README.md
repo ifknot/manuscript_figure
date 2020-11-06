@@ -45,8 +45,9 @@ namespace fig {
 
 		string_t	title{ "" };	// The figure title
 		string_t	subtitle{ "" }; // Optional subtitle
-		string_t	note{ "" };		// Optional A note can appear below the figure to describe contents of the figure that cannot be understood from the figure title, image, and/or legend alone (e.g. definitions of abbreviations, copyright attribution)
-		string_t	tag{ "" };		// The figure number (e.g. Figure 1)
+		string_t	note{ "" };	// Optional A note can appear below the figure to describe contents of the figure that cannot be understood 
+						// from the figure title, image, and/or legend alone (e.g. definitions of abbreviations, copyright attribution)
+		string_t	tag{ "" };	// The figure number (e.g. Figure 1)
 
 		// calculate screen metrics
 		double				pixels_per_cm = dpi / cm_per_inch;
@@ -54,7 +55,7 @@ namespace fig {
 		double				font_scale = dpi / pt_per_inch;
 
 		//PLOS_ONE defaults
-		colour_mode_t colour_mode{ colour_mode_t::RGB };
+		colour_mode_t 	colour_mode{ colour_mode_t::RGB };
 		unit_t		white_space_border{ 2, units::pt };
 		unit_t		column_width{ 5.2, units::inch };
 		unit_t		minimum_width{ 2.63, units::inch };
@@ -64,7 +65,7 @@ namespace fig {
 
 		unit_t		minimum_pt{ 8, units::pt };
 		unit_t		maximum_pt{ 12, units::pt };
-		std::vector<string_t>	valid_fonts{ "Ariel", "Times", "Symbol" };
+		font_list_t	valid_fonts{ "Ariel", "Times", "Symbol" };
 
 	};
 
@@ -76,8 +77,8 @@ namespace fig {
 
 		caption_t(dpi_t dpi, rect_t bounding_box) :
 			dpi(dpi),
-			bounding_box(bounding_box) {
-		}
+			bounding_box(bounding_box) 
+		{}
 
 		dpi_t		dpi;	// pixels per inch of the paper - 12-pt font is 1/6 inch in height
 		// the available drawing space bounding box
@@ -91,16 +92,16 @@ namespace fig {
 		string_t	figure_label{ "" };
 		string_t	figure_title{ "" };
 		string_t	legend{ "" };
-														//	cm	   inches
-		unit_t		column_width{ 13.2, units::cm };	// 13.2 	5.2 
-		unit_t		minimum_width{ 6.68, units::cm };	// 6.68		2.63
-		unit_t		maximum_width{ 19.05, units::cm };	// 19.05	7.5
-		unit_t		minimum_height{ 13.2, units::cm };	// 13.2		5.2 
-		unit_t		maximum_height{ 22.23, units::cm }; // 22.23	8.75
+									//	cm	inches
+		unit_t		column_width{ 13.2, units::cm };	// 	13.2 	5.2 
+		unit_t		minimum_width{ 6.68, units::cm };	// 	6.68	2.63
+		unit_t		maximum_width{ 19.05, units::cm };	// 	19.05	7.5
+		unit_t		minimum_height{ 13.2, units::cm };	// 	13.2	5.2 
+		unit_t		maximum_height{ 22.23, units::cm }; 	// 	22.23	8.75
 
 		unit_t		minimum_pt{ 8, units::pt };
 		unit_t		maximum_pt{ 12, units::pt };
-		std::vector<string_t>	valid_fonts{ "Ariel", "Times", "Symbol" };
+		font_list_t	valid_fonts{ "Ariel", "Times", "Symbol" };
 		
 	};
 
