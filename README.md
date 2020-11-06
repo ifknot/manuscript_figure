@@ -106,5 +106,7 @@ namespace fig {
 	};
 
 }
-
 ```
+
+## [Tips on effective use of tables and figures in research papers.](https://www.editage.com/insights/tips-on-effective-use-of-tables-and-figures-in-research-papers)
+(Velany Rodrigues Nov 04, 2013)
