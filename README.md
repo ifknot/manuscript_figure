@@ -1,7 +1,7 @@
 # manuscript_figure
 A display item figure for academic manuscripts.
 
-Intended as a cross-platform framework and windowing service flexible it is currently implemented using wxWidgets. 
+Intended to be cross-platform and windowing service flexible it is, however, currently implemented using wxWidgets. The _windowing service flexible_ notion allows `manuscript_figure` to be a component within the underlying windowing service as well as a standalone figure. As such, the current `wx_manuscript_figure` is a concrete implementation of `manuscript_figure` that is a compatible widget with wxWidgets.
 
 A figure may be a chart, a graph, a photograph, a drawing, or any other illustration or nontextual depiction. Any type of illustration or image other than a table is referred to as a figure.
 
