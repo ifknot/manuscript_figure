@@ -1,9 +1,10 @@
 # manuscript_figure
 A display item figure for academic manuscripts.
 
+Intended as a cross-platform framework and windowing service flexible it is currently implemented using wxWidgets. 
+
 A figure may be a chart, a graph, a photograph, a drawing, or any other illustration or nontextual depiction. Any type of illustration or image other than a table is referred to as a figure.
 
- 
 ## Figure Components:
 + Number: The figure number(e.g. Figure 1) appears above the figure in bold
 + Title: The figure title appears one double-spaced line below the figure number in italic title case.
