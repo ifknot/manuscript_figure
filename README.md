@@ -13,7 +13,7 @@ A figure may be a chart, a graph, a photograph, a drawing, or any other illustra
 + Note: A note can appear below the figure to describe contents of the figure that cannot be understood from the figure title, image, and/or legend alone (e.g. definitions of abbreviations, copyright attribution). Notes are double-spaced and flush left. Not all figures include notes.
 
 ## Figure Definition File:
-Each journal will have specific formatting instructions relating to figures and tables, which can be found in the ‘Instructions to Authors’ section. These may be very detailed, such as those provided by the [Journal of Clinical Investigation](https://www.jci.org/kiosk/publish/figures).
+Each journal will have specific formatting instructions relating to figures and tables, which can be found in the ‘Instructions to Authors’ section. These may be very detailed, such as those provided by the [Journal of Clinical Investigation](https://www.jci.org/kiosk/publish/figures) or [Cambridge](https://www.cambridge.org/core/journals/journal-of-materials-research/information/instructions-contributors/instructions-figures).
 
 The manuscript_figure expects a `figure.h` file that defines the journal specific constraints for display items.
 
