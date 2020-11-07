@@ -20,6 +20,7 @@
  * @author Jeremy Thornton
  * @date   November 2020
  *********************************************************************/
+#pragma once
 
 namespace fig {
 
@@ -29,21 +30,21 @@ namespace fig {
 	using float_t = double;
 
 	/**
-	 * whilst the dominant unit of length, the Postscript point, is 1/72 inch
-	 * figure defaults to TeX point sizes where there are 72.272 points per inch
+	 * Whilst the dominant unit of length, the Postscript point, is 1/72 inch,
+	 * figure defaults to TeX point sizes where there are 72.272 points per inch.
 	 * @note but the closely related "bigpts" Big Points. 72 bp = 1 in.
 	 */
 	static const float_t pt_per_inch = 72.272;
 
 	/**
-	 * journal formatting instructions are usually presented in inches and cm
-	 * resolution, however, is universally expressed as dots per inch (dpi)
-	 * internally, therefore, figure uses inches to speed the conversion to screen coordinates
+	 * Journal formatting instructions are usually presented in inches and cm.
+	 * Resolution, however, is universally expressed as dots per inch (dpi).
+	 * Internally, therefore, figure uses inches to speed the conversion to screen coordinates.
 	 */
 	static const float_t cm_per_inch = 2.54;
 
 	/**
-	 * conversion convenience 
+	 * Conversion convenience 
 	 */
 	static const float_t inch_per_cm = 0.393701;
 
@@ -52,6 +53,11 @@ namespace fig {
 	 * Conventional wisdom is that line spacing of 130%-150% is ideal for readability.
 	 * In fact, anything from about 120% up to 200% is acceptable but 140% tends to be the most quoted sweet spot.
 	 */
-	static const double line_height = 1.4;
+	static const float_t line_height = 1.4;
+
+	/**
+	 * For rotated text degrees conversion to radians,
+	 */
+	static const float_t radians_per_degree = 0.01745329;
 
 }
