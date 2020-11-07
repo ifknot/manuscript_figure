@@ -155,6 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="fig\constants.h" />
+    <ClInclude Include="fig\manuscript_figure.h" />
+    <ClInclude Include="fig\rectangle.h" />
+    <ClInclude Include="fig\unit.h" />
+    <ClInclude Include="fig\wx_manuscript_figure.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -169,6 +174,9 @@
     <Image Include="test_fig.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fig\rectangle.cpp" />
+    <ClCompile Include="fig\unit.cpp" />
+    <ClCompile Include="fig\wx_manuscript_figure.cpp" />
     <ClCompile Include="test_app.cpp" />
     <ClCompile Include="test_window.cpp" />
   </ItemGroup>

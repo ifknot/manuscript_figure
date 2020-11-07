@@ -30,6 +30,21 @@
     <ClInclude Include="test_window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="fig\manuscript_figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\wx_manuscript_figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\rectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\unit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="test_fig.rc">
@@ -49,6 +64,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="test_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fig\wx_manuscript_figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fig\rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fig\unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
