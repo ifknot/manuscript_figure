@@ -66,9 +66,6 @@
     <ClCompile Include="test_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fig\wx_manuscript_figure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="fig\rectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
