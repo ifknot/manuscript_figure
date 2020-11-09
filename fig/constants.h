@@ -22,12 +22,9 @@
  *********************************************************************/
 #pragma once
 
-namespace fig {
+#include "types.h"
 
-	/**
-	 * permits the global adjustment of f.p. accuracy vs speed
-	 */
-	using float_t = double;
+namespace fig {
 
 	/**
 	 * Whilst the dominant unit of length, the Postscript point, is 1/72 inch,
