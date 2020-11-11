@@ -15,10 +15,10 @@ A figure may be a chart, a graph, a photograph, a drawing, or any other illustra
 ## Figure Definition File:
 Each journal will have specific formatting instructions relating to figures and tables, which can be found in the ‘Instructions to Authors’ section. These may be very detailed, such as those provided by the [Journal of Clinical Investigation](https://www.jci.org/kiosk/publish/figures) or [Cambridge Journal of Materials Research ](https://www.cambridge.org/core/journals/journal-of-materials-research/information/instructions-contributors/instructions-figures).
 
-The manuscript_figure expects a `figure.h` file that defines the journal specific constraints for display items.
+The manuscript_figure expects a `metrics.h` file that defines the journal specific constraints for display items.
 
-## Example figure.h
-The [PLOS ONE journal](https://journals.plos.org/plosone/s/figures#loc-captions) formatting constraints expressed as a `figure.h` file:
+## Example metrics.h
+The [PLOS ONE journal](https://journals.plos.org/plosone/s/figures#loc-captions) formatting constraints expressed as a `metrics.h` file:
 ```cpp
 
 #pragma once
@@ -33,9 +33,9 @@ namespace fig {
 	 * PLOS_ONE defaults
 	 * @url https://journals.plos.org/plosone/s/figures#loc-captions
 	 */
-	struct figure_t {
+	struct metrics_t {
 
-		figure_t(dpi_t dpi, rect_t bounding_box) : 
+		metrics_t(dpi_t dpi, rect_t bounding_box) : 
 			dpi(dpi),
 			bounding_box(bounding_box)
 		{}
