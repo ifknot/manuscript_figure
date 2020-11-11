@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="fig\colours.h" />
     <ClInclude Include="fig\constants.h" />
     <ClInclude Include="fig\metrics.h" />
     <ClInclude Include="fig\PLOS_ONE_metrics.h" />
