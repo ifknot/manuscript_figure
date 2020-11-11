@@ -9,7 +9,8 @@
 
 namespace fig {
 
-	
+	class rectangle {
 
+	};
 
 }

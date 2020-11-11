@@ -14,18 +14,20 @@
 namespace fig {
 
 	/**
-	 * permits the global adjustment of f.p. accuracy vs speed
-	 */
-	using float_t = double;
-
-	/**
 	 * colour options
 	 */
 	enum class colour_mode_t { RGB, grayscale };
 
-	using ratio_t = std::pair<double, double>;
+	/**
+	 * permits the global adjustment of f.p. accuracy vs speed
+	 */
+	using float_t = double;
 
 	using string_t = wxString;
+
+	using font_list_t = std::vector<string_t>;
+
+	using ratio_t = std::pair<double, double>;
 
 	struct point_t {
 		double x;

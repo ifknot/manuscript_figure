@@ -1,6 +1,6 @@
 /*****************************************************************//**
- * @file   figure.h
- * @brief  Figure Definition File: The manuscript expects a figure.h file that defines the journal specific constraints for display items.
+ * @file   metrics.h
+ * @brief  Figure Definition File: The manuscript expects a metrics.h file that defines the journal specific constraints for display items.
  * Each journal will have specific formatting instructions relating to figures and tables, which can be found in the ‘Instructions to Authors’ section. 
  * These may be very detailed, such as those provided by the 
  * Journal of Clinical Investigation https://www.jci.org/kiosk/publish/figures
@@ -11,8 +11,4 @@
  *********************************************************************/
 #pragma once
 
-namespace fig {
-
-
-
-}
+#include "PLOS_ONE_metrics.h"
