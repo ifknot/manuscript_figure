@@ -1,7 +1,7 @@
 /*****************************************************************//**
  * @file   component.h
  * @brief  The component interface of the composite pattern
- * The figure framework specifically uses orientated bounding boxes (OOB).
+ * The figure framework specifically uses orientated bounding boxes (OBB).
  * Ones that, unlike axis aligned bouncing boxes (AABB), are unique to themselves as a 
  * local coordinate system, range [0.0, 1.0] for both x & y with the origin at top left.
  * Whilst AABBs are used traditionally, being simpler to test for intersection than OBBs, 
@@ -12,22 +12,32 @@
  *********************************************************************/
 #pragma once
 
+#include "metrics.h"
 #include "rectangle.h"
 
 namespace fig {
 
-	template<typename GDC>
+	template<typename T>
 	class component {
 
 	public:
 
+		component(metrics_t& metrics, rectangle bounding_box) :
+			metrics(metrics),
+			bounding_box(bounding_box) 
+		{}
+
+		virtual void render(T& gdc) = 0;
+
+		inline rectangle bounds() const {
+			return bounding_box;
+		}
+
 	private:
 
-		/**
-		 * Specifically an orientated bounding box (OOB).
-		 */
-		rectangle bounding_box;
+		metrics_t& metrics;
 
+		rectangle bounding_box;
 
 	};
 
