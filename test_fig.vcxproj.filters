@@ -54,6 +54,12 @@
     <ClInclude Include="fig\panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="fig\component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\composite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="test_fig.rc">
