@@ -66,6 +66,9 @@
     <ClInclude Include="fig\wx_composite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="fig\wx_component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="test_fig.rc">

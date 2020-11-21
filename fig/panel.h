@@ -15,12 +15,6 @@
 
 #ifdef USE_WX_WIDGETS
 
-#include "wx\wx.h"
-
-#if wxUSE_GRAPHICS_CONTEXT
-	#include <wx/dcgraph.h>
-#endif
-
 #include "wx_composite.h"
 
 using composite_t = fig::wx_composite_t;

@@ -167,6 +167,7 @@
     <ClInclude Include="fig\styles.h" />
     <ClInclude Include="fig\types.h" />
     <ClInclude Include="fig\unit.h" />
+    <ClInclude Include="fig\wx_component.h" />
     <ClInclude Include="fig\wx_composite.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
