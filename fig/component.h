@@ -22,12 +22,14 @@ namespace fig {
 
 	public:
 
-		component(metrics_t& metrics, rectangle bounding_box) :
-			metrics(metrics),
-			bounding_box(bounding_box) 
+		typedef T GDC_type;
+
+		component(component* parent) :
+			metrics(parent->metrics),
+			bounding_box(parent->bounding_box) 
 		{}
 
-		virtual void render(T& gdc) = 0;
+		virtual void render(GDC_type& gdc) = 0;
 
 		inline rectangle bounds() const {
 			return bounding_box;
@@ -35,9 +37,9 @@ namespace fig {
 
 	private:
 
-		metrics_t& metrics;
+		const metrics_t& metrics;
 
-		rectangle bounding_box;
+		rect_t bounding_box;
 
 	};
 

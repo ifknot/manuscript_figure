@@ -51,13 +51,19 @@
     <ClInclude Include="fig\colours.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fig\panel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="fig\component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fig\composite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\styles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\panel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\wx_composite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

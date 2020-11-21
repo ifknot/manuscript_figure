@@ -7,9 +7,8 @@
  *********************************************************************/
 #pragma once
 
-#include <utility>
-
-#include "wx/wx.h"
+#include <string>
+#include <vector>
 
 namespace fig {
 
@@ -23,20 +22,20 @@ namespace fig {
 	 */
 	using float_t = double;
 
-	using string_t = wxString;
+	using string_t = std::string;	// in case you prefer a different string type
 
 	using font_list_t = std::vector<string_t>;
 
-	using ratio_t = std::pair<double, double>;
+	using ratio_t = std::pair<float_t, float_t>;
 
 	struct point_t {
-		double x;
-		double y;
+		float_t x;
+		float_t y;
 	};
 
 	struct dimension_t {
-		double width;
-		double height;
+		float_t width;
+		float_t height;
 	};
 
 }

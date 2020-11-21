@@ -7,9 +7,16 @@
  *********************************************************************/
 #pragma once
 
+#include "types.h"
+#include "unit.h"
+
 namespace fig {
 
-	class rectangle {
+	struct rect_t {
+
+		point_t		position;
+		dimension_t dimensions;
+		units		unit;
 
 	};
 
