@@ -20,13 +20,13 @@ namespace fig {
 	 */
 	struct metrics_t {
 
-		metrics_t(size_t dpi, rectangle bounding_box) :
+		metrics_t(size_t dpi, rect_t bounding_box) :
 			dpi(dpi),
 			bounding_box(bounding_box) {
 		}
 
 		size_t		dpi;	// pixels per inch of the paper - 12-pt font is 1/6 inch in height
-		rectangle 		bounding_box;
+		rect_t 		bounding_box;
 
 		string_t	title{ "" };	// The figure title
 		string_t	subtitle{ "" }; // Optional subtitle
@@ -60,7 +60,7 @@ namespace fig {
 	 */
 	struct caption_t {
 
-		caption_t(size_t dpi, rectangle bounding_box) :
+		caption_t(size_t dpi, rect_t bounding_box) :
 			dpi(dpi),
 			bounding_box(bounding_box) {
 		}
@@ -69,7 +69,7 @@ namespace fig {
 		// the available drawing space bounding box
 		// this will shrink if items are added e.g. margin, title, axes, legend
 		// before finally displaying the plot itself
-		rectangle		bounding_box;
+		rect_t		bounding_box;
 
 		//PLOS_ONE defaults
 		colour_mode_t colour_mode{ colour_mode_t::RGB };

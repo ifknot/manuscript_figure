@@ -90,10 +90,10 @@
     <ClCompile Include="test_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fig\rectangle.cpp">
+    <ClCompile Include="fig\unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fig\unit.cpp">
+    <ClCompile Include="fig\wx_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

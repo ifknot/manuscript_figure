@@ -18,6 +18,22 @@ namespace fig {
 		dimension_t dimensions;
 		units		unit;
 
+		inline unit_t x() const {
+			return unit_t({ position.x, unit });
+		}
+
+		unit_t y() const {
+			return unit_t({ position.y, unit });
+		}
+
+		unit_t width() const {
+			return unit_t({ dimensions.width, unit });
+		}
+
+		unit_t height() const {
+			return unit_t({ dimensions.height, unit });
+		}
+
 	};
 
 }

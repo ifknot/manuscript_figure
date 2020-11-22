@@ -14,6 +14,7 @@
 
 #include "metrics.h"
 #include "rectangle.h"
+#include "styles.h"
 
 namespace fig {
 
@@ -24,20 +25,33 @@ namespace fig {
 
 		typedef T GDC_type;
 
-		component(component* parent) :
+		component(const component* parent) :
 			metrics(parent->metrics),
 			bounding_box(parent->bounding_box) 
 		{}
 
 		virtual void render(GDC_type& gdc) = 0;
 
-		inline rectangle bounds() const {
+		inline rect_t bounds() const {
 			return bounding_box;
 		}
 
-	private:
+	protected:
 
 		const metrics_t& metrics;
+
+		//void shrink_bounds(const rect_t& margin);
+
+		//rect_t draw_text(wxDC& gdc, const point_t p, const wxString& s, const element_text_t& text);
+
+		//void draw_line(wxDC& gdc, const point_t a, const point_t b, const element_line_t& line);
+
+		//void draw_rect(wxDC& gdc, const point_t p, const dimension_t d, const element_rect_t& rect);
+
+		virtual void draw_circle(wxDC& gdc, const point_t o, const double r, const style_circle_t style) = 0;
+
+
+	private:
 
 		rect_t bounding_box;
 

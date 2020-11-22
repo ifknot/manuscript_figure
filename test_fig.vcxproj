@@ -183,8 +183,8 @@
     <Image Include="test_fig.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fig\rectangle.cpp" />
     <ClCompile Include="fig\unit.cpp" />
+    <ClCompile Include="fig\wx_component.cpp" />
     <ClCompile Include="test_app.cpp" />
     <ClCompile Include="test_window.cpp" />
   </ItemGroup>

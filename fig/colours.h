@@ -6,10 +6,10 @@ namespace fig {
 
 	struct colour_t {
 
-		uint8_t		r{ 0x00 };
-		uint8_t		g{ 0x00 };
-		uint8_t		b{ 0x00 };
-		uint8_t		a{ 0xFF };
+		uint8_t		red		{ 0x00 };
+		uint8_t		green	{ 0x00 };
+		uint8_t		blue	{ 0x00 };
+		uint8_t		alpha	{ 0xFF };
 
 	};
 
