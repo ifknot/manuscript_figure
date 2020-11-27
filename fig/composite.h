@@ -10,6 +10,8 @@
 #include <vector>
 #include <memory>
 
+#include "metrics.h"
+
 namespace fig {
 
 	template<typename Component_Policy>
@@ -19,13 +21,15 @@ namespace fig {
 
 	public:
 
-		using Component_Policy::component;
+		composite(metrics_t& metrics) : Component_Policy(metrics) {}
+
+		composite(const Component_Policy* parent) : Component_Policy(parent) {}
 
 		inline void add(Component_Policy* p) {
 			components.emplace_back(p);
 		}
 
-		inline void render(Component_Policy::GDC_type& gdc) override {
+		inline void render(typename Component_Policy::GDC_type& gdc) override {
 			for (auto& c : components) {
 				c->render(gdc);
 			}

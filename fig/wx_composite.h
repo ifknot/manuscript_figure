@@ -5,7 +5,7 @@
 
 namespace fig {
 
-	class wx_composite_t : public composite<wx_component> {
+	class wx_composite : public composite<wx_component> {
 
 	public:
 

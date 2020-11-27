@@ -25,6 +25,11 @@ namespace fig {
 
 		typedef T GDC_type;
 
+		component(metrics_t& metrics) :
+			metrics(metrics),
+			bounding_box(metrics.bounding_box) {
+		}
+
 		component(const component* parent) :
 			metrics(parent->metrics),
 			bounding_box(parent->bounding_box) 
@@ -48,7 +53,7 @@ namespace fig {
 
 		//void draw_rect(wxDC& gdc, const point_t p, const dimension_t d, const element_rect_t& rect);
 
-		virtual void draw_circle(wxDC& gdc, const point_t o, const double r, const style_circle_t style) = 0;
+		virtual void draw_circle(GDC_type& gdc, const point_t o, const double r, const style_circle_t style) = 0;
 
 
 	private:

@@ -6,6 +6,8 @@
 	#include <wx/dcgraph.h>
 #endif
 
+#include "wx/wx.h"
+
 #include "component.h"
 
 namespace fig {

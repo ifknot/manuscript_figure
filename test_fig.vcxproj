@@ -169,6 +169,7 @@
     <ClInclude Include="fig\unit.h" />
     <ClInclude Include="fig\wx_component.h" />
     <ClInclude Include="fig\wx_composite.h" />
+    <ClInclude Include="fig\wx_panel.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -185,6 +186,7 @@
   <ItemGroup>
     <ClCompile Include="fig\unit.cpp" />
     <ClCompile Include="fig\wx_component.cpp" />
+    <ClCompile Include="fig\wx_panel.cpp" />
     <ClCompile Include="test_app.cpp" />
     <ClCompile Include="test_window.cpp" />
   </ItemGroup>
