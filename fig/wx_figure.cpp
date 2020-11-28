@@ -6,6 +6,8 @@
 
 #include <cmath>
 
+#include "background.h"
+
 namespace fig {
 
 
@@ -25,7 +27,7 @@ namespace fig {
 				(int)std::round(metrics.dpi * metrics.bounding_box.height().inches())
 			}
 		),
-		f(metrics)
+		root(metrics)
 	{
 		init_layout();
 	}
@@ -36,20 +38,20 @@ namespace fig {
 #if wxUSE_GRAPHICS_CONTEXT
 		wxGCDC gdc(pdc);
 		wxDC& dc = use_gcdc ? (wxDC&)gdc : (wxDC&)pdc;
-		f.render(dc);
+		root.render_traverse(dc);
 #else
 		wxDC& dc = pdc;
-		figure.render(dc);
+		root.render_traverse(dc);
 #endif
 	}
 
 	void wx_figure::paintNow() {
 		wxClientDC dc(this);
-		f.render(dc);
+		root.render_traverse(dc);
 	}
 
 	void wx_figure::init_layout() {
-
+		root.add(new fig::background(&root));
 	}
 
 }

@@ -25,7 +25,7 @@ namespace fig {
 
 		typedef T GDC_type;
 
-		component(metrics_t& metrics) :
+		component(const metrics_t& metrics) :
 			metrics(metrics),
 			bounding_box(metrics.bounding_box) {
 		}
@@ -35,7 +35,7 @@ namespace fig {
 			bounding_box(parent->bounding_box) 
 		{}
 
-		virtual void render(GDC_type& gdc) = 0;
+		virtual void render_traverse(GDC_type& gdc) = 0;
 
 		inline rect_t bounds() const {
 			return bounding_box;

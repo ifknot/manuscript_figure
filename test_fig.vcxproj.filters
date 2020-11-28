@@ -63,10 +63,16 @@
     <ClInclude Include="fig\wx_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fig\figure.h">
+    <ClInclude Include="fig\wx_figure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fig\wx_figure.h">
+    <ClInclude Include="fig\tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\leaf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -97,6 +103,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="fig\wx_figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fig\background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

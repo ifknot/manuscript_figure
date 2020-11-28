@@ -21,7 +21,7 @@ namespace fig {
 
 	public:
 
-		composite(metrics_t& metrics) : Component_Policy(metrics) {}
+		composite(const metrics_t& metrics) : Component_Policy(metrics) {}
 
 		composite(const Component_Policy* parent) : Component_Policy(parent) {}
 
@@ -29,9 +29,9 @@ namespace fig {
 			components.emplace_back(p);
 		}
 
-		inline void render(typename Component_Policy::GDC_type& gdc) override {
+		inline void render_traverse(typename Component_Policy::GDC_type& gdc) override {
 			for (auto& c : components) {
-				c->render(gdc);
+				c->render_traverse(gdc);
 			}
 		}
 

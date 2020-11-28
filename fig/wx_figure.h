@@ -2,7 +2,7 @@
 
 #include "wx/wx.h"
 
-#include "figure.h"
+#include "tree.h"
 
 namespace fig {
 
@@ -20,7 +20,7 @@ namespace fig {
 
     private:
 
-        fig::figure f;
+        fig::tree root;
 
         void init_layout();
 
