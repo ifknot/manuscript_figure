@@ -14,8 +14,6 @@ namespace fig {
 
 	private:
 
-		style_circle_t style;
-
 	};
 
 }
