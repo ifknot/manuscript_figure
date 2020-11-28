@@ -9,13 +9,13 @@ class test_window : public wxFrame {
 
 public:
 
-	test_window();
+	test_window(fig::metrics_t& metrics);
 
 	~test_window() = default;
 
 private:
 
-	fig::metrics_t metrics;
+	fig::metrics_t& metrics;
 
 	fig::wx_panel* panel;
 

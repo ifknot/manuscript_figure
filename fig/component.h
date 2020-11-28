@@ -60,6 +60,8 @@ namespace fig {
 
 		rect_t bounding_box;
 
+		size_t z{ 0 };
+
 	};
 
 }

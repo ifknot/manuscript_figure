@@ -12,7 +12,7 @@ bool test_app::OnInit() {
 	}
 	setlocale(LC_NUMERIC, "English");
 
-	auto win = new test_window();
+	auto win = new test_window(metrics);
 
 	f.reset(win);
 	f->Show();

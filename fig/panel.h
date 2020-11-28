@@ -17,7 +17,7 @@
 
 #include "wx_composite.h"
 
-using composite_t = fig::wx_composite_t;
+using composite_t = fig::wx_composite;
 
 #endif 
 

@@ -4,6 +4,8 @@
 #include <wx/dcgraph.h>
 #endif
 
+#include <cmath>
+
 namespace fig {
 
 
@@ -14,7 +16,15 @@ namespace fig {
 	END_EVENT_TABLE()
 
 	wx_panel::wx_panel(wxFrame* parent, metrics_t& metrics) :
-		wxPanel(parent, wxID_ANY, wxDefaultPosition, {200,400}),
+		wxPanel(
+			parent, 
+			wxID_ANY, 
+			wxDefaultPosition, 
+			{
+				(int)std::round(metrics.dpi * metrics.bounding_box.width().inches()),
+				(int)std::round(metrics.dpi * metrics.bounding_box.height().inches())
+			}
+		),
 		figure(metrics)
 	{
 		init_layout();
@@ -26,16 +36,16 @@ namespace fig {
 #if wxUSE_GRAPHICS_CONTEXT
 		wxGCDC gdc(pdc);
 		wxDC& dc = use_gcdc ? (wxDC&)gdc : (wxDC&)pdc;
-		//plot.render(dc);
+		figure.render(dc);
 #else
 		wxDC& dc = pdc;
-		//plot.render(dc);
+		figure.render(dc);
 #endif
 	}
 
 	void wx_panel::paintNow() {
 		wxClientDC dc(this);
-		//render(dc);
+		figure.render(dc);
 	}
 
 	void fig::wx_panel::init_layout() {
