@@ -1,4 +1,4 @@
-#include "wx_panel.h"
+#include "wx_figure.h"
 
 #if wxUSE_GRAPHICS_CONTEXT
 #include <wx/dcgraph.h>
@@ -9,13 +9,13 @@
 namespace fig {
 
 
-	BEGIN_EVENT_TABLE(wx_panel, wxPanel)
+	BEGIN_EVENT_TABLE(wx_figure, wxPanel)
 
-	EVT_PAINT(wx_panel::paintEvent)
+	EVT_PAINT(wx_figure::paintEvent)
 
 	END_EVENT_TABLE()
 
-	wx_panel::wx_panel(wxFrame* parent, metrics_t& metrics) :
+	wx_figure::wx_figure(wxFrame* parent, metrics_t& metrics) :
 		wxPanel(
 			parent, 
 			wxID_ANY, 
@@ -25,30 +25,30 @@ namespace fig {
 				(int)std::round(metrics.dpi * metrics.bounding_box.height().inches())
 			}
 		),
-		figure(metrics)
+		f(metrics)
 	{
 		init_layout();
 	}
 
-	void wx_panel::paintEvent(wxPaintEvent& evt) {
+	void wx_figure::paintEvent(wxPaintEvent& evt) {
 		wxPaintDC pdc(this);
 
 #if wxUSE_GRAPHICS_CONTEXT
 		wxGCDC gdc(pdc);
 		wxDC& dc = use_gcdc ? (wxDC&)gdc : (wxDC&)pdc;
-		figure.render(dc);
+		f.render(dc);
 #else
 		wxDC& dc = pdc;
 		figure.render(dc);
 #endif
 	}
 
-	void wx_panel::paintNow() {
+	void wx_figure::paintNow() {
 		wxClientDC dc(this);
-		figure.render(dc);
+		f.render(dc);
 	}
 
-	void fig::wx_panel::init_layout() {
+	void wx_figure::init_layout() {
 
 	}
 

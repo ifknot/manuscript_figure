@@ -8,30 +8,31 @@
  *********************************************************************/
 #pragma once
 
+#define USE_WX_WIDGETS
+
 #include "metrics.h"
 #include "composite.h"
 
-#define USE_WX_WIDGETS
-
 #ifdef USE_WX_WIDGETS
 
-#include "wx_composite.h"
+#include "wx_component.h"
 
-using composite_t = fig::wx_composite;
+using composite_t = fig::composite<fig::wx_component>;
 
 #endif 
 
 namespace fig {
 
-	class panel : public composite_t {
+	class figure : public composite_t {
 
 
 
 	public:
 
-		panel(const metrics_t& metrics, rect_t bounds) :
+		figure(const metrics_t& metrics) :
 			composite_t(this),
-			metrics(metrics)
+			metrics(metrics),
+			bounds(metrics.bounding_box)
 		{}
 
 	private:

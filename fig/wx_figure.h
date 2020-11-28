@@ -2,15 +2,15 @@
 
 #include "wx/wx.h"
 
-#include "wx_composite.h"
+#include "figure.h"
 
 namespace fig {
 
-    class wx_panel : public wxPanel {
+    class wx_figure : public wxPanel {
 
     public:
 
-        wx_panel(wxFrame* parent, metrics_t& metrics);
+        wx_figure(wxFrame* parent, metrics_t& metrics);
 
         void paintEvent(wxPaintEvent& evt);
 
@@ -20,7 +20,7 @@ namespace fig {
 
     private:
 
-        fig::wx_composite figure;
+        fig::figure f;
 
         void init_layout();
 

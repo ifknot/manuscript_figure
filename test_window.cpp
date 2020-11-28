@@ -4,7 +4,7 @@ test_window::test_window(fig::metrics_t& metrics) :
 	wxFrame(nullptr, wxID_ANY, "test_wx"),
 	metrics(metrics)
 {
-	panel = new fig::wx_panel(this, metrics);
+	wx_fig = new fig::wx_figure(this, metrics);
 	Fit();
 	Centre();
 }

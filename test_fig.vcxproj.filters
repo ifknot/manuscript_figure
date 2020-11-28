@@ -60,16 +60,13 @@
     <ClInclude Include="fig\styles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fig\panel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fig\wx_composite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="fig\wx_component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fig\wx_panel.h">
+    <ClInclude Include="fig\figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fig\wx_figure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -99,7 +96,7 @@
     <ClCompile Include="fig\wx_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fig\wx_panel.cpp">
+    <ClCompile Include="fig\wx_figure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

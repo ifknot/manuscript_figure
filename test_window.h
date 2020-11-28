@@ -3,7 +3,7 @@
 #include "wx/wx.h"
 
 #include "fig/metrics.h"
-#include "fig/wx_panel.h"
+#include "fig/wx_figure.h"
 
 class test_window : public wxFrame {
 
@@ -17,6 +17,6 @@ private:
 
 	fig::metrics_t& metrics;
 
-	fig::wx_panel* panel;
+	fig::wx_figure* wx_fig;
 
 };
