@@ -47,9 +47,9 @@ namespace fig {
 
 		//void shrink_bounds(const rect_t& margin);
 
-		//rect_t draw_text(GDC_type& gdc, const point_t p, const wxString& s, const element_text_t& text);
+		virtual rect_t draw_text(GDC_type& gdc, const point_t p, const string_t& s, const style_text_t& text) = 0;
 
-		//void draw_line(GDC_type& gdc, const point_t a, const point_t b, const element_line_t& line);
+		virtual void draw_line(GDC_type& gdc, const point_t a, const point_t b, const style_line_t& line) = 0;
 
 		virtual void draw_rect(GDC_type& gdc, const point_t p, const dimension_t d, const style_rect_t& rect) = 0;
 

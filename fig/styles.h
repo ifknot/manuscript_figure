@@ -93,12 +93,12 @@ namespace fig {
 		string_t		family{ "Ariel" };
 		face_t			face{ face_t::plain };
 		colour_t		colour{ black };			// line / border colour
-		float_t			size{ 1 };					// line / border size in mm; text size in pts.
+		float_t			size{ 12 };					// line / border size in mm; text size in pts.
 		float_t			hjust{ 0 };					// horizontal justification (in [0,1])
 		float_t			vjust{ 0 };					// vertical justification (in [0,1])
 		float_t			angle{ 0 };					// angle (in [0,360])
 		float_t			lineheight{ 1.4 };			// line height as factor of font size 
-		colour_t		background{ transparent };
+		colour_t		background{ white };
 		rect_t			margin{ 0, 0, 0, 0, units::inch };	
 
 	};

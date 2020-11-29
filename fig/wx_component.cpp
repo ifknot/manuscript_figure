@@ -71,14 +71,110 @@ namespace fig {
 		}
 	}
 
+	rect_t wx_component::draw_text(GDC_type& gdc, const point_t p, const string_t& s, const style_text_t& style) {
+		assert((p.x >= 0) && (p.x <= 1));
+		assert((p.y >= 0) && (p.y <= 1));
+		// convert bounds to screen coords
+		auto dpi{ (float_t)metrics.dpi };
+		auto w = dpi * bounds().width().inches();
+		auto h = dpi * bounds().height().inches();
+		auto x = dpi * bounds().x().inches();
+		auto y = dpi * bounds().y().inches();
+		// create fontinfo
+		wxFontInfo info(std::round(style.size * metrics.font_scale));
+		info.FaceName(style.family);
+		info.AllFlags(as_wxFONTFLAG(style.face));
+		info.AntiAliased(true);
+		// setup font from fontinfo
+		wxFont font(info);
+		gdc.SetFont(font);
+		// create bitmap same size as text dimensions 
+		wxCoord text_width, text_height;
+		gdc.GetTextExtent(s, &text_width, &text_height);
+		wxBitmap bitmap(text_width, text_height, wxBITMAP_SCREEN_DEPTH);
+		bitmap.UseAlpha();
+		// create a memory device context
+		wxMemoryDC mdc;
+		mdc.SelectObject(bitmap);
+		mdc.SetBackground(as_wxColour(style.background));
+		mdc.Clear();
+		mdc.SetFont(font);
+		mdc.SetTextForeground(as_wxColour(style.colour));
+		mdc.DrawText(s, 0, 0);
+		mdc.SelectObject(wxNullBitmap);
+
+		auto text_image = bitmap.ConvertToImage();
+		text_image.SetAlpha(nullptr);
+		//text_image.InitAlpha();
+		/*
+		text_image.Rescale(
+			text_width,
+			text_height,
+			wxIMAGE_QUALITY_HIGH
+		);
+		*/
+		auto rotated_image = text_image.Rotate(
+			radians_per_degree * style.angle,
+			{ 0, 0 }
+		);
+
+		auto tw{ (float_t)rotated_image.GetWidth() };
+		auto th{ (float_t)rotated_image.GetHeight() };
+		auto tx = std::round(x + (p.x * w) - (tw * style.hjust));
+		auto ty = std::round(y + (p.y * h) - (th * style.vjust));
+		// adjust if text image strays out of bounds
+		/*
+		if (ty + th >= y + h) {
+			ty -= (ty + th) - (y + h);
+		}
+		if (tx + tw >= x + w) {
+			tx -= (tx + tw) - (x + w);
+		}
+		if (tx < x) {
+			tx = x;
+		}
+		*/
+		gdc.DrawBitmap(rotated_image, tx, ty);
+		// if had used drawRotatedText then would not be able to retrieve the bounds
+		return rect_t{ p.x, p.y, tw / w, th / h, units::inch };
+	}
+
+	void wx_component::draw_line(GDC_type& gdc, const point_t a, const point_t b, const style_line_t& style) {
+		assert((a.x >= 0) && (a.x <= 1));
+		assert((a.y >= 0) && (a.y <= 1));
+		assert((b.x >= 0) && (b.x <= 1));
+		assert((b.y >= 0) && (b.y <= 1));
+		//calculate the width & height and x, y origin of the display bounding box
+		auto dpi{ (float_t)metrics.dpi };
+		auto w = dpi * bounds().width().inches();
+		auto h = dpi * bounds().height().inches();
+		auto x = dpi * bounds().x().inches();
+		auto y = dpi * bounds().y().inches();
+
+		gdc.SetPen(
+			wxPen(
+				as_wxColour(style.colour),
+				std::round(metrics.pixels_per_pt * style.size),
+				as_wxPenStyle(style.linetype)
+			)
+		);
+		gdc.DrawLine(
+			std::round(x + (a.x * w)),
+			std::round(y + (a.y * h)),
+			std::round(x + (b.x * w)),
+			std::round(y + (b.y * h))
+		);
+	}
+
 	void wx_component::draw_rect(GDC_type& gdc, const point_t p, const dimension_t d, const style_rect_t& style) {
 		assert((p.x >= 0) && (p.x <= 1));
 		assert((p.y >= 0) && (p.y <= 1));
 		//calculate the width & height and x, y origin of the display bounding box
-		auto w = metrics.dpi * bounds().width().inches();//as_dimension(bounding_box).width;
-		auto h = metrics.dpi * bounds().height().inches();// as_dimension(bounding_box).height;
-		auto x = metrics.dpi * bounds().x().inches();// as_position(bounding_box).x;
-		auto y = metrics.dpi * bounds().y().inches();// as_position(bounding_box).y;
+		auto dpi{ (float_t)metrics.dpi };
+		auto w = dpi * bounds().width().inches();
+		auto h = dpi * bounds().height().inches();
+		auto x = dpi * bounds().x().inches();
+		auto y = dpi * bounds().y().inches();
 
 		gdc.SetPen(
 			wxPen(
@@ -96,8 +192,8 @@ namespace fig {
 		gdc.DrawRectangle(
 			std::round(x + (p.x * w)),
 			std::round(y + (p.y * h)),
-			std::round((p.x + d.width) * w),
-			std::round((p.y + d.height) * h)
+			std::round(d.width * w),
+			std::round(d.height * h)
 		);
 	}
 
@@ -106,10 +202,11 @@ namespace fig {
 		assert((o.x >= 0) && (o.x <= 1));
 		assert((o.y >= 0) && (o.y <= 1));
 		//calculate the width & height and x, y origin of the display bounding box
-		auto w = metrics.dpi * bounds().width().inches();
-		auto h = metrics.dpi * bounds().height().inches();
-		auto x = metrics.dpi * bounds().x().inches();
-		auto y = metrics.dpi * bounds().y().inches();
+		auto dpi{ (float_t)metrics.dpi };
+		auto w = dpi * bounds().width().inches();
+		auto h = dpi * bounds().height().inches();
+		auto x = dpi * bounds().x().inches();
+		auto y = dpi * bounds().y().inches();
 		auto rr = r + r;
 		gdc.SetPen(
 			wxPen(
