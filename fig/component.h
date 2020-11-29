@@ -47,11 +47,11 @@ namespace fig {
 
 		//void shrink_bounds(const rect_t& margin);
 
-		//rect_t draw_text(wxDC& gdc, const point_t p, const wxString& s, const element_text_t& text);
+		//rect_t draw_text(GDC_type& gdc, const point_t p, const wxString& s, const element_text_t& text);
 
-		//void draw_line(wxDC& gdc, const point_t a, const point_t b, const element_line_t& line);
+		//void draw_line(GDC_type& gdc, const point_t a, const point_t b, const element_line_t& line);
 
-		//void draw_rect(wxDC& gdc, const point_t p, const dimension_t d, const element_rect_t& rect);
+		virtual void draw_rect(GDC_type& gdc, const point_t p, const dimension_t d, const style_rect_t& rect) = 0;
 
 		virtual void draw_circle(GDC_type& gdc, const point_t o, const double r, const style_circle_t style) = 0;
 

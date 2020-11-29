@@ -22,11 +22,14 @@ namespace fig {
 	static const colour_t transparent{ 255, 255, 255, 0 };
 
 	enum class linetypes { blank, solid, dashed, dotted, dotdash, longdash, twodash };
+	enum class hatchtypes { solid, transparent, cross, horizontal, vertical, diagonal_backwards, diagonal_forwards, diagonal_cross};
 	enum class endstyles { round, butt, square };
+
+	// convenient dimensions and positions
 
 	const dimension_t halfsize{ 0.5, 0.5 };
 	const dimension_t fullsize{ 1,1 };
-
+					
 	const point_t topleft{ 0, 0 };
 	const point_t top{ 0.5, 0 };
 	const point_t topright{ 1, 0 };
@@ -45,7 +48,7 @@ namespace fig {
 
 		enum class arrow_end_t { last, first, both };
 		enum class arrow_type_t { open, closed };
-
+						// defaults
 		float_t			angle{ 45 };				// the angle of the arrow head in degrees (smaller numbers produce narrower, pointier arrows).Essentially describes the width of the arrow head.length
 		unit_t			length{ 1, units::pt };		// unit specifying the length of the arrow head (from tip to base).
 		arrow_end_t		ends{ arrow_end_t::last };	// one of "last", "first", or "both", indicating which ends of the line to draw arrow heads.
@@ -54,7 +57,7 @@ namespace fig {
 	};
 
 	struct style_line_t {
-
+						//defaults
 		colour_t		colour{ black };			// line / border colour default black
 		float_t			size{ 1 };					// line / border size in mm; text size in pts.
 		linetypes		linetype{ linetypes::solid };	// line type blank, solid, dashed, dotted, dotdash, longdash, twodash
@@ -64,27 +67,29 @@ namespace fig {
 	};
 
 	struct style_rect_t {
-
-		colour_t		fill{ white };				// fill colour default white
-		colour_t		colour{ black };			// line / border colour default black
+						// defaults
+		colour_t		fill{ white };				// fill colour 
+		colour_t		colour{ black };			// line / border 
 		float_t			size{ 1 };					// line / border size in mm; text size in pts.
 		linetypes		linetype{ linetypes::solid };	// line type integer 0:8 blank, solid, dashed, dotted, dotdash, longdash, twodash
+		hatchtypes		hatchtype{ hatchtypes::solid }; // fill colour hatch style
 
 	};
 
 	struct style_circle_t {
-
-		colour_t		fill{ white };				// fill colour default white
-		colour_t		colour{ black };			// line / border colour default black
-		float_t			size{ 1 };					// line / border size in mm; text size in pts.
+						//defaults
+		colour_t		fill{ white };					// fill colour	
+		colour_t		colour{ black };				// line / border colour		
+		float_t			size{ 1 };						// line / border size in mm; text size in pts.
 		linetypes		linetype{ linetypes::solid };	// line type integer 0:8 blank, solid, dashed, dotted, dotdash, longdash, twodash
-
+		hatchtypes		hatchtype{ hatchtypes::solid }; // fill colour hatch style
+	
 	};
 
 	struct style_text_t {
 
 		enum class face_t { plain, italic, bold, bold_italic };
-
+						// defaults
 		string_t		family{ "Ariel" };
 		face_t			face{ face_t::plain };
 		colour_t		colour{ black };			// line / border colour
@@ -95,6 +100,7 @@ namespace fig {
 		float_t			lineheight{ 1.4 };			// line height as factor of font size 
 		colour_t		background{ transparent };
 		rect_t			margin{ 0, 0, 0, 0, units::inch };	
+
 	};
 
 }

@@ -24,7 +24,7 @@ private:
 	/**
 	 * 95 dpi (LG monitor) figure 10 x 10 cm 
 	 */
-	//fig::metrics_t metrics{ 95, { 0, 0, 10, 10, fig::units::cm } };
+	fig::metrics_t metrics{ 95, { 0, 0, 10, 10, fig::units::cm } };
 
 	/**
 	 * 142 dpi (Lenovo p52) figure 10 x 10 cm
@@ -44,7 +44,7 @@ private:
 	/**
 	 * 600 dpi (JCI) figure 5.2 x 5.2 inches.
 	 */
-	//fig::metrics_t metrics{ 150, { 0, 0, 5.2, 5.2, fig::units::inch } };
+	//fig::metrics_t metrics{ 600, { 0, 0, 5.2, 5.2, fig::units::inch } };
 	
 	/**
 	 * 1200 dpi (Cambridge) figure 3 x 3 inches.

@@ -24,7 +24,11 @@ namespace fig {
 
 		wxPenStyle as_wxPenStyle(linetypes linetype);
 
+		wxBrushStyle as_wxBrushStyle(hatchtypes hatchtype);
+
 		int as_wxFONTFLAG(style_text_t::face_t face);
+
+		virtual void draw_rect(GDC_type& gdc, const point_t p, const dimension_t d, const style_rect_t& rect) override final;
 
 		virtual void draw_circle(wxDC& gdc, const point_t o, const double r, const style_circle_t style) override final;
 
