@@ -2,8 +2,7 @@
 
 wxIMPLEMENT_APP(test_app);
 
-test_app::test_app() {
-}
+test_app::test_app() {}
 
 bool test_app::OnInit() {
 
@@ -12,10 +11,8 @@ bool test_app::OnInit() {
 	}
 	setlocale(LC_NUMERIC, "English");
 
-	auto win = new test_window(metrics);
-
-	f.reset(win);
-	f->Show();
+	win = new test_window(metrics);
+	win->Show();
 
 	return true;
 

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "wx\wx.h"
-
-#include <memory>
+#include <wx\wx.h>
 
 #include "fig\metrics.h"
 #include "test_window.h"
@@ -19,7 +17,7 @@ public:
 
 private:
 
-	std::unique_ptr<test_window> f;
+	test_window* win;
 
 	/**
 	 * 95 dpi (LG monitor) figure 10 x 10 cm 
