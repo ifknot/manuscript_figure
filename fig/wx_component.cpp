@@ -105,14 +105,6 @@ namespace fig {
 
 		auto text_image = bitmap.ConvertToImage();
 		text_image.SetAlpha(nullptr);
-		//text_image.InitAlpha();
-		/*
-		text_image.Rescale(
-			text_width,
-			text_height,
-			wxIMAGE_QUALITY_HIGH
-		);
-		*/
 		auto rotated_image = text_image.Rotate(
 			radians_per_degree * style.angle,
 			{ 0, 0 }
@@ -123,7 +115,6 @@ namespace fig {
 		auto tx = std::round(x + (p.x * w) - (tw * style.hjust));
 		auto ty = std::round(y + (p.y * h) - (th * style.vjust));
 		// adjust if text image strays out of bounds
-		/*
 		if (ty + th >= y + h) {
 			ty -= (ty + th) - (y + h);
 		}
@@ -133,7 +124,6 @@ namespace fig {
 		if (tx < x) {
 			tx = x;
 		}
-		*/
 		gdc.DrawBitmap(rotated_image, tx, ty);
 		// if had used drawRotatedText then would not be able to retrieve the bounds
 		return rect_t{ p.x, p.y, tw / w, th / h, units::inch };
