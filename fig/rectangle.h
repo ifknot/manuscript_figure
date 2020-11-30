@@ -15,23 +15,25 @@ namespace fig {
 	struct rect_t {
 
 		point_t		position;
-		dimension_t dimensions;
+		dimension_t dimension;
 		units		unit;
+
+		rect_t shrink(const rect_t& margin);
 
 		inline unit_t x() const {
 			return unit_t({ position.x, unit });
 		}
 
-		unit_t y() const {
+		inline unit_t y() const {
 			return unit_t({ position.y, unit });
 		}
 
-		unit_t width() const {
-			return unit_t({ dimensions.width, unit });
+		inline unit_t width() const {
+			return unit_t({ dimension.width, unit });
 		}
 
-		unit_t height() const {
-			return unit_t({ dimensions.height, unit });
+		inline unit_t height() const {
+			return unit_t({ dimension.height, unit });
 		}
 
 	};

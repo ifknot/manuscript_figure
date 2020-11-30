@@ -161,6 +161,7 @@
     <ClInclude Include="fig\composite.h" />
     <ClInclude Include="fig\constants.h" />
     <ClInclude Include="fig\component.h" />
+    <ClInclude Include="fig\grid.h" />
     <ClInclude Include="fig\leaf.h" />
     <ClInclude Include="fig\tree.h" />
     <ClInclude Include="fig\metrics.h" />
@@ -187,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fig\background.cpp" />
+    <ClCompile Include="fig\rectangle.cpp" />
     <ClCompile Include="fig\unit.cpp" />
     <ClCompile Include="fig\wx_component.cpp" />
     <ClCompile Include="fig\wx_figure.cpp" />

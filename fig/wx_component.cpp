@@ -71,6 +71,10 @@ namespace fig {
 		}
 	}
 
+	void wx_component::shrink_bounds(const rect_t& margin) {
+		bounding_box = bounding_box.shrink(margin);
+	}
+
 	rect_t wx_component::draw_text(GDC_type& gdc, const point_t p, const string_t& s, const style_text_t& style) {
 		assert((p.x >= 0) && (p.x <= 1));
 		assert((p.y >= 0) && (p.y <= 1));
@@ -126,7 +130,7 @@ namespace fig {
 		}
 		gdc.DrawBitmap(rotated_image, tx, ty);
 		// if had used drawRotatedText then would not be able to retrieve the bounds
-		return rect_t{ p.x, p.y, tw / w, th / h, units::inch };
+		return rect_t{ (tx - x) / w, (ty - y) / h, tw / w, th / h, units::inch };
 	}
 
 	void wx_component::draw_line(GDC_type& gdc, const point_t a, const point_t b, const style_line_t& style) {

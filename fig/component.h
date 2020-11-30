@@ -45,7 +45,13 @@ namespace fig {
 
 		const metrics_t& metrics;
 
-		//void shrink_bounds(const rect_t& margin);
+		rect_t bounding_box;
+
+		size_t z{ 0 };
+
+	protected:
+
+		virtual void shrink_bounds(const rect_t& margin) = 0;
 
 		virtual rect_t draw_text(GDC_type& gdc, const point_t p, const string_t& s, const style_text_t& text) = 0;
 
@@ -56,11 +62,7 @@ namespace fig {
 		virtual void draw_circle(GDC_type& gdc, const point_t o, const double r, const style_circle_t style) = 0;
 
 
-	private:
-
-		rect_t bounding_box;
-
-		size_t z{ 0 };
+		
 
 	};
 
